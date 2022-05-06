@@ -1,0 +1,111 @@
+truncate table review_likes;
+
+insert into review_likes (liked, user_id, review_id) values (true, 1, 5);
+insert into review_likes (liked, user_id, review_id) values (false, 1, 16);
+insert into review_likes (liked, user_id, review_id) values (false, 1, 7);
+insert into review_likes (liked, user_id, review_id) values (false, 1, 14);
+insert into review_likes (liked, user_id, review_id) values (true, 1, 8);
+insert into review_likes (liked, user_id, review_id) values (false, 1, 6);
+insert into review_likes (liked, user_id, review_id) values (true, 1, 10);
+insert into review_likes (liked, user_id, review_id) values (false, 1, 1);
+insert into review_likes (liked, user_id, review_id) values (true, 1, 11);
+insert into review_likes (liked, user_id, review_id) values (true, 1, 21);
+
+insert into review_likes (liked, user_id, review_id) values (false, 2, 8);
+insert into review_likes (liked, user_id, review_id) values (true, 2, 24);
+insert into review_likes (liked, user_id, review_id) values (true, 2, 14);
+insert into review_likes (liked, user_id, review_id) values (false, 2, 12);
+insert into review_likes (liked, user_id, review_id) values (false, 2, 7);
+insert into review_likes (liked, user_id, review_id) values (true, 2, 2);
+insert into review_likes (liked, user_id, review_id) values (false, 2, 9);
+insert into review_likes (liked, user_id, review_id) values (true, 2, 21);
+insert into review_likes (liked, user_id, review_id) values (false, 2, 18);
+insert into review_likes (liked, user_id, review_id) values (true, 2, 16);
+
+insert into review_likes (liked, user_id, review_id) values (false, 3, 15);
+insert into review_likes (liked, user_id, review_id) values (true, 3, 18);
+insert into review_likes (liked, user_id, review_id) values (true, 3, 2);
+insert into review_likes (liked, user_id, review_id) values (false, 3, 3);
+insert into review_likes (liked, user_id, review_id) values (true, 3, 8);
+insert into review_likes (liked, user_id, review_id) values (false, 3, 23);
+insert into review_likes (liked, user_id, review_id) values (true, 3, 4);
+insert into review_likes (liked, user_id, review_id) values (true, 3, 5);
+insert into review_likes (liked, user_id, review_id) values (true, 3, 24);
+insert into review_likes (liked, user_id, review_id) values (false, 3, 6);
+
+insert into review_likes (liked, user_id, review_id) values (true, 4, 18);
+insert into review_likes (liked, user_id, review_id) values (true, 4, 23);
+insert into review_likes (liked, user_id, review_id) values (true, 4, 5);
+insert into review_likes (liked, user_id, review_id) values (true, 4, 22);
+insert into review_likes (liked, user_id, review_id) values (true, 4, 1);
+insert into review_likes (liked, user_id, review_id) values (true, 4, 6);
+insert into review_likes (liked, user_id, review_id) values (true, 4, 10);
+insert into review_likes (liked, user_id, review_id) values (true, 4, 24);
+insert into review_likes (liked, user_id, review_id) values (true, 4, 7);
+insert into review_likes (liked, user_id, review_id) values (true, 4, 8);
+
+insert into review_likes (liked, user_id, review_id) values (true, 5, 16);
+insert into review_likes (liked, user_id, review_id) values (true, 5, 20);
+insert into review_likes (liked, user_id, review_id) values (false, 5, 22);
+insert into review_likes (liked, user_id, review_id) values (true, 5, 8);
+insert into review_likes (liked, user_id, review_id) values (false, 5, 21);
+insert into review_likes (liked, user_id, review_id) values (false, 5, 19);
+insert into review_likes (liked, user_id, review_id) values (false, 5, 1);
+insert into review_likes (liked, user_id, review_id) values (false, 5, 2);
+insert into review_likes (liked, user_id, review_id) values (true, 5, 5);
+insert into review_likes (liked, user_id, review_id) values (true, 5, 12);
+
+insert into review_likes (liked, user_id, review_id) values (false, 6, 21);
+insert into review_likes (liked, user_id, review_id) values (true, 6, 23);
+insert into review_likes (liked, user_id, review_id) values (false, 6, 11);
+insert into review_likes (liked, user_id, review_id) values (true, 6, 24);
+insert into review_likes (liked, user_id, review_id) values (false, 6, 7);
+insert into review_likes (liked, user_id, review_id) values (false, 6, 2);
+insert into review_likes (liked, user_id, review_id) values (false, 6, 15);
+insert into review_likes (liked, user_id, review_id) values (true, 6, 16);
+insert into review_likes (liked, user_id, review_id) values (false, 6, 14);
+insert into review_likes (liked, user_id, review_id) values (false, 6, 17);
+
+insert into review_likes (liked, user_id, review_id) values (true, 7, 16);
+insert into review_likes (liked, user_id, review_id) values (false, 7, 6);
+insert into review_likes (liked, user_id, review_id) values (false, 7, 20);
+insert into review_likes (liked, user_id, review_id) values (true, 7, 22);
+insert into review_likes (liked, user_id, review_id) values (true, 7, 8);
+insert into review_likes (liked, user_id, review_id) values (true, 7, 10);
+insert into review_likes (liked, user_id, review_id) values (false, 7, 18);
+insert into review_likes (liked, user_id, review_id) values (true, 7, 13);
+insert into review_likes (liked, user_id, review_id) values (true, 7, 23);
+insert into review_likes (liked, user_id, review_id) values (false, 7, 21);
+
+insert into review_likes (liked, user_id, review_id) values (true, 8, 17);
+insert into review_likes (liked, user_id, review_id) values (false, 8, 23);
+insert into review_likes (liked, user_id, review_id) values (false, 8, 20);
+insert into review_likes (liked, user_id, review_id) values (true, 8, 15);
+insert into review_likes (liked, user_id, review_id) values (false, 8, 12);
+insert into review_likes (liked, user_id, review_id) values (false, 8, 18);
+insert into review_likes (liked, user_id, review_id) values (false, 8, 24);
+insert into review_likes (liked, user_id, review_id) values (true, 8, 2);
+insert into review_likes (liked, user_id, review_id) values (false, 8, 4);
+insert into review_likes (liked, user_id, review_id) values (true, 8, 8);
+
+insert into review_likes (liked, user_id, review_id) values (true, 9, 1);
+insert into review_likes (liked, user_id, review_id) values (true, 9, 2);
+insert into review_likes (liked, user_id, review_id) values (false, 9, 3);
+insert into review_likes (liked, user_id, review_id) values (false, 9, 4);
+insert into review_likes (liked, user_id, review_id) values (true, 9, 5);
+insert into review_likes (liked, user_id, review_id) values (false, 9, 6);
+insert into review_likes (liked, user_id, review_id) values (false, 9, 7);
+insert into review_likes (liked, user_id, review_id) values (true, 9, 8);
+insert into review_likes (liked, user_id, review_id) values (true, 9, 9);
+insert into review_likes (liked, user_id, review_id) values (false, 9, 10);
+
+insert into review_likes (liked, user_id, review_id) values (false, 10, 11);
+insert into review_likes (liked, user_id, review_id) values (false, 10, 12);
+insert into review_likes (liked, user_id, review_id) values (true, 10, 13);
+insert into review_likes (liked, user_id, review_id) values (true, 10, 14);
+insert into review_likes (liked, user_id, review_id) values (true, 10, 15);
+insert into review_likes (liked, user_id, review_id) values (false, 10, 16);
+insert into review_likes (liked, user_id, review_id) values (false, 10, 17);
+insert into review_likes (liked, user_id, review_id) values (true, 10, 18);
+insert into review_likes (liked, user_id, review_id) values (false, 10, 19);
+insert into review_likes (liked, user_id, review_id) values (false, 10, 20);

@@ -1,0 +1,112 @@
+truncate table user_comment;
+alter sequence user_comment_comment_id_seq restart;
+
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 1, 1, 'Optimized 24 hour hardware', '2021-12-17 23:51:05');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 2, 1, 'Persistent composite project', '2021-12-12 00:18:25');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 3, 1, 'Persistent full-range time-frame', '2022-01-02 19:02:44');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 4, 1, 'Distributed methodical portal', '2021-12-19 04:45:14');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 5, 1, 'Re-engineered dynamic concept', '2022-01-07 03:48:05');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 6, 1, 'Future-proofed cohesive functionalities', '2021-12-21 01:26:05');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 7, 1, 'Innovative full-range neural-net', '2021-12-01 03:33:00');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 8, 1, 'Compatible local collaboration', '2022-01-22 21:28:36');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 9, 1, 'Multi-lateral disintermediate analyzer', '2022-01-10 08:04:52');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 10, 1, 'Horizontal heuristic policy', '2021-11-22 02:13:24');
+
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 11, 2, 'Exclusive 5th generation implementation', '2022-01-08 08:04:24');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 12, 2, 'Ergonomic full-range productivity', '2021-11-23 18:37:56');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 13, 2, 'Centralized bi-directional protocol', '2021-12-28 11:46:49');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 14, 2, 'Re-engineered hybrid superstructure', '2021-12-22 04:31:42');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 15, 2, 'Organic dynamic archive', '2021-12-11 19:15:29');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 16, 2, 'Decentralized encompassing migration', '2021-12-16 15:23:58');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 17, 2, 'Function-based impactful moratorium', '2021-12-05 13:48:55');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 18, 2, 'Progressive composite solution', '2021-12-06 15:23:01');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 19, 2, 'Reduced 3rd generation leverage', '2022-01-17 00:40:26');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 20, 2, 'Streamlined modular contingency', '2021-11-22 11:02:20');
+
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 21, 3, 'Future-proofed optimizing local area network', '2022-01-08 13:58:14');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 22, 3, 'Digitized didactic frame', '2022-01-18 01:33:29');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 23, 3, 'Balanced modular matrices', '2021-12-14 15:24:36');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 24, 3, 'Cross-group leading edge pricing structure', '2022-01-22 16:55:37');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 1, 3, 'Implemented responsive secured line', '2021-12-06 01:03:37');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 7, 3, 'Digitized transitional infrastructure', '2021-12-11 04:21:54');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 6, 3, 'Digitized encompassing parallelism', '2021-12-14 22:32:56');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 4, 3, 'Cross-platform cohesive local area network', '2022-01-16 23:34:39');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 17, 3, 'Devolved full-range projection', '2021-11-30 00:08:20');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 2, 3, 'Horizontal discrete framework', '2021-11-26 18:31:04');
+
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 1, 4, 'Pre-emptive discrete utilisation', '2021-12-15 04:25:43');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 8, 4, 'Persevering grid-enabled migration', '2022-01-17 13:42:57');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 20, 4, 'Stand-alone regional knowledge base', '2022-01-04 14:05:20');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 19, 4, 'Ameliorated static encoding', '2022-01-03 19:37:11');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 14, 4, 'Profound heuristic database', '2022-01-18 19:29:14');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 12, 4, 'Reverse-engineered 24/7 workforce', '2022-01-05 18:35:39');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 10, 4, 'Progressive regional superstructure', '2022-01-14 10:38:21');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 3, 4, 'Intuitive object-oriented capacity', '2022-01-21 12:15:20');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 24, 4, 'Re-engineered executive open architecture', '2021-12-04 19:47:31');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 19, 4, 'Centralized 24 hour ability', '2021-12-29 12:30:34');
+
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 24, 5, 'Cross-platform empowering concept', '2022-01-13 17:05:03');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 7, 5, 'Robust multi-state function', '2021-11-27 22:50:14');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 3, 5, 'Sharable demand-driven product', '2021-12-29 13:21:43');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 21, 5, 'Persistent 24/7 functionalities', '2021-12-17 05:04:10');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 1, 5, 'Implemented analyzing monitoring', '2021-12-11 03:24:07');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 8, 5, 'Organized attitude-oriented contingency', '2021-11-30 19:00:22');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 7, 5, 'Profound responsive support', '2021-12-12 16:02:47');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 19, 5, 'Ameliorated transitional interface', '2021-12-09 13:56:36');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 7, 5, 'Automated client-server hub', '2021-11-28 23:19:40');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 19, 5, 'Focused content-based instruction set', '2021-12-18 14:04:30');
+
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 10, 6, 'Managed exuding functionalities', '2021-11-22 08:54:48');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 3, 6, 'Horizontal analyzing orchestration', '2021-12-10 17:04:42');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 8, 6, 'Diverse zero tolerance throughput', '2021-12-14 10:06:04');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 12, 6, 'Multi-lateral client-server benchmark', '2022-01-18 06:20:50');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 14, 6, 'Innovative intangible capacity', '2021-11-17 05:05:09');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 14, 6, 'Multi-channelled grid-enabled moratorium', '2022-01-16 08:11:53');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 7, 6, 'Assimilated disintermediate archive', '2022-01-16 10:33:57');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 11, 6, 'Optional heuristic workforce', '2021-12-18 02:40:59');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 15, 6, 'Advanced local secured line', '2021-12-19 17:20:37');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 7, 6, 'Inverse real-time definition', '2022-01-02 15:11:47');
+
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 3, 7, 'Self-enabling tertiary synergy', '2021-11-30 18:49:37');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 15, 7, 'Monitored cohesive solution', '2021-11-29 17:26:03');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 6, 7, 'Down-sized impactful system engine', '2021-12-10 07:59:46');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 16, 7, 'Cross-platform upward-trending hierarchy', '2021-12-02 08:01:32');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 5, 7, 'Distributed content-based artificial intelligence', '2022-01-14 05:57:19');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 16, 7, 'Public-key bottom-line middleware', '2021-12-29 01:28:31');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 1, 7, 'Upgradable stable process improvement', '2021-12-13 08:39:10');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 13, 7, 'Upgradable explicit moratorium', '2021-11-26 12:25:19');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 20, 7, 'Horizontal zero tolerance open architecture', '2022-01-06 08:55:39');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 1, 7, 'Innovative well-modulated moderator', '2021-12-17 12:07:20');
+
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 3, 8, 'Devolved homogeneous moratorium', '2021-12-31 09:34:24');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 9, 8, 'Synchronised next generation analyzer', '2021-12-31 19:46:55');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 8, 8, 'Optimized contextually-based database', '2021-11-27 18:40:20');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 24, 8, 'Adaptive analyzing framework', '2021-12-14 06:08:27');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 10, 8, 'Monitored attitude-oriented intranet', '2021-11-16 21:59:41');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 4, 8, 'Reverse-engineered holistic website', '2021-12-13 10:13:21');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 20, 8, 'Assimilated bandwidth-monitored software', '2021-11-22 03:53:00');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 7, 8, 'Distributed multimedia access', '2022-01-14 07:02:08');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 15, 8, 'Advanced 5th generation strategy', '2022-01-04 11:34:27');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 23, 8, 'Self-enabling clear-thinking initiative', '2021-11-20 18:36:12');
+
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 23, 9, 'Face to face well-modulated encoding', '2021-12-24 12:08:13');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 17, 9, 'Focused actuating secured line', '2022-01-10 15:58:04');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 2, 9, 'Operative static synergy', '2021-11-24 10:41:06');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 19, 9, 'Balanced exuding productivity', '2021-11-29 08:02:57');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 1, 9, 'Mandatory optimizing utilisation', '2021-11-29 22:15:46');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 4, 9, 'Fully-configurable background software', '2021-12-26 08:24:27');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 13, 9, 'Profit-focused maximized artificial intelligence', '2022-01-23 04:56:40');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 22, 9, 'Polarised multimedia time-frame', '2021-12-11 10:04:14');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 20, 9, 'Open-architected logistical portal', '2021-12-13 17:59:11');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 17, 9, 'Monitored multi-state focus group', '2021-11-17 21:16:17');
+
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 10, 10, 'Polarised dynamic alliance', '2021-12-28 09:09:46');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 13, 10, 'Centralized even-keeled orchestration', '2021-12-30 06:32:08');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 16, 10, 'Expanded optimizing attitude', '2021-12-23 23:28:52');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 15, 10, 'Organized eco-centric forecast', '2021-12-11 15:30:02');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 12, 10, 'Focused non-volatile implementation', '2021-12-25 20:38:27');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 21, 10, 'Synchronised uniform forecast', '2022-01-02 14:58:56');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 13, 10, 'Monitored fault-tolerant standardization', '2021-12-09 14:14:22');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 14, 10, 'Re-engineered 5th generation contingency', '2021-12-27 07:31:44');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 15, 10, 'Digitized logistical concept', '2022-01-09 18:32:08');
+insert into user_comment (id, review_id, user_id, comment_text, sent_at) values (default, 23, 10, 'Synergistic zero tolerance solution', '2021-12-08 20:55:17');

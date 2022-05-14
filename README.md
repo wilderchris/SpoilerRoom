@@ -28,23 +28,22 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/kak79/BuenoMorselsBackend">
-    <img src="https://github.com/kak79/BuenoMorselsBackend/blob/cw/src/main/resources/assests/logo2.jpg" alt="BuenoMorsel" width="80" height="80">
+  <a href="https://github.com/wilderchris/spoilerroom">
+    <img src="https://github.com/wilderchris/SpoilerRoom/blob/main/src/main/resources/images/logo.png" alt="ScreenerRoom" width="80" height="80">
   </a>
 
-<h3 align="center">Bueno Morsel</h3>
+<h3 align="center">ScreenerRoom</h3>
 
   <p align="center">
-Social Site for Meal Pictures from Restaurants with Account management
+Movie review and Social Media site to enjoy movies with friends and share your love of movies <br />
+    <a href="https://github.com/wilderchris/spoilerroom"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://github.com/kak79/BuenoMorselsBackend"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/kak79/BuenoMorselsBackend">View Demo</a>
+    <a href="https://github.com/wilderchris/spoilerroom">View Demo</a>
     ·
-    <a href="https://github.com/kak79/BuenoMorselsBackend/issues">Report Bug</a>
+    <a href="https://github.com/wilderchris/spoilerroom/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/wilderchris/spoilerroom/issues">Request Feature</a>
   </p>
 </div>
 
@@ -176,10 +175,11 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## External API
 
-The Team utilized PEXELS API to populate posts for testing.
-using the free service with 200 requests per hour and 20,000 requests per month for now.
+The Team utilized TMDB API for Movies.
+using the free service
 
-https://www.pexels.com/api/documentation/
+https://developers.themoviedb.org/3/getting-started/introduction
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -197,7 +197,6 @@ RESTAURANT
 
 ![GET](https://img.shields.io/static/v1.svg?label=register&message=http://localhost:8080/restaurant/{restaurant_id}&color=blue )
 ---
-Pexels Random Image
 
 ![GET](https://img.shields.io/static/v1.svg?label=register&message=http://localhost:8080/pexelsimage/{image_type}&color=blue )
 
@@ -281,4 +280,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/chriswwilder/
-[product-screenshot]: https://github.com/kak79/BuenoMorselsBackend/blob/cw/src/main/resources/assests/first%20mock%20up%20using%20figma.png
+[product-screenshot]: https://github.com/wilderchris/SpoilerRoom/blob/main/src/main/resources/images/screenshot.png

@@ -280,4 +280,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/chriswwilder/
-[product-screenshot]: https://github.com/wilderchris/SpoilerRoom/blob/main/src/main/resources/images/logo.png
+[product-screenshot]: https://github.com/wilderchris/SpoilerRoom/blob/main/src/main/resources/images/screenshot.png

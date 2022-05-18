@@ -195,10 +195,10 @@ TMDB Api
 
 ![GET](https://img.shields.io/static/v1.svg?label=Upcoming&message=http://localhost:8080/api/&color=blue )
 
-![GET](https://img.shields.io/static/v1.svg?label=videoUrl&message=http://localhost:8080/api/{apimovie_id}&color=blue )
+![GET](https://img.shields.io/static/v1.svg?label=Query&message=http://localhost:8080/api/{movie type}&color=blue )
+
 ---
 
-![GET](https://img.shields.io/static/v1.svg?label=Query&message=http://localhost:8080/api/{movie type}&color=blue )
 
 
 

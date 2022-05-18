@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.ProTwo.Utilities.TMDBApi;
+import com.revature.ProTwo.beans.ApiMovie;
 import com.revature.ProTwo.beans.Movie;
 import com.revature.ProTwo.beans.MovieRating;
 import com.revature.ProTwo.beans.Review;
@@ -46,7 +48,29 @@ public class MovieController {
 		List<Movie> allMovies = movieServ.viewMovies();
 		return ResponseEntity.ok(allMovies);
 	}
-
+//////////////////////////////
+	@GetMapping(path = "/api/{query}")
+	public ResponseEntity<ApiMovie[]> getMovieByQuery(@PathVariable String query) throws MovieNotFoundException {
+		ApiMovie[] movies = TMDBApi.APIQuery(query);
+		if (movies != null)
+			return ResponseEntity.ok(movies);
+		else
+			return ResponseEntity.notFound().build();
+	}
+	
+	
+	@GetMapping(path = "/api/")
+	public ResponseEntity<ApiMovie[]> getMovieByNew() throws MovieNotFoundException {
+		
+		ApiMovie[] allMovies = TMDBApi.newMovies();
+		for ( int i = 0; i < allMovies.length;i++) {
+		allMovies[i].setKey(TMDBApi.videoLink(allMovies[i].getId()));
+		}
+		return ResponseEntity.ok(allMovies);
+		
+		
+	}
+	////////////////////////////////////////////////////
 	
 	@PostMapping
 	public ResponseEntity<Map<String, Integer>> create(@RequestBody Movie newMovie) {

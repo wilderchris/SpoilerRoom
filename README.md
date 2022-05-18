@@ -189,13 +189,13 @@ USER
 
 ![POST](https://img.shields.io/static/v1.svg?label=register&message=http://localhost:8080/users/&color=blue )
 
-![GET](https://img.shields.io/static/v1.svg?label=register&message=http://localhost:8080/users/{user_id}&color=blue )
+![GET](https://img.shields.io/static/v1.svg?label=getUser&message=http://localhost:8080/users/{user_id}&color=blue )
 ---
 TMDB Api
 
 ![GET](https://img.shields.io/static/v1.svg?label=Upcoming&message=http://localhost:8080/api/&color=blue )
 
-![GET](https://img.shields.io/static/v1.svg?label=Query&message=http://localhost:8080/api/{movie type}&color=blue )
+![GET](https://img.shields.io/static/v1.svg?label=Query&message=http://localhost:8080/api/{query_variable}&color=blue )
 
 ---
 

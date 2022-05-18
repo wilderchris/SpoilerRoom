@@ -191,14 +191,14 @@ USER
 
 ![GET](https://img.shields.io/static/v1.svg?label=register&message=http://localhost:8080/users/{user_id}&color=blue )
 ---
-RESTAURANT
+TMDB Api
 
-![POST](https://img.shields.io/static/v1.svg?label=register&message=http://localhost:8080/restaurant/&color=blue )
+![GET](https://img.shields.io/static/v1.svg?label=Upcoming&message=http://localhost:8080/api/&color=blue )
 
-![GET](https://img.shields.io/static/v1.svg?label=register&message=http://localhost:8080/restaurant/{restaurant_id}&color=blue )
+![GET](https://img.shields.io/static/v1.svg?label=videoUrl&message=http://localhost:8080/api/{apimovie_id}&color=blue )
 ---
 
-![GET](https://img.shields.io/static/v1.svg?label=register&message=http://localhost:8080/pexelsimage/{image_type}&color=blue )
+![GET](https://img.shields.io/static/v1.svg?label=Query&message=http://localhost:8080/api/{movie type}&color=blue )
 
 
 

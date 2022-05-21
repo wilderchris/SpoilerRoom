@@ -196,7 +196,11 @@ USER
 
 ![POST](https://img.shields.io/static/v1.svg?label=register&message=http://localhost:8080/users/&color=blue )
 
-![GET](https://img.shields.io/static/v1.svg?label=getUser&message=http://localhost:8080/users/{user_id}&color=blue )
+![GET](https://img.shields.io/static/v1.svg?label=getUserById&message=http://localhost:8080/users/{user_id}&color=blue )
+
+![GET](https://img.shields.io/static/v1.svg?label=CheckLogin&message=http://localhost:8080/user/{userId}/auth&color=blue )
+
+![PUT](https://img.shields.io/static/v1.svg?label=UpdateUser&message=http://localhost:8080/users/{user_id}&color=blue )
 ---
 TMDB Api
 

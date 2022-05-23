@@ -1,6 +1,5 @@
 package com.revature.ProTwo.services;
 
-import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.revature.ProTwo.Utilities.TMDBApi;
+import com.revature.ProTwo.beans.ApiMovie;
 import com.revature.ProTwo.beans.Movie;
 import com.revature.ProTwo.beans.MovieRating;
 import com.revature.ProTwo.beans.Review;
@@ -44,14 +45,7 @@ public class MovieServiceImpl implements MovieService{
 	}
 
 	@Override
-	public void delete(Movie movie) throws MovieNotFoundException {
-		
-		movieRepo.delete(movie);
-	}
-
-	@Override
 	public Movie getMovieById(int id) throws MovieNotFoundException {
-		
 		 return movieRepo.findById(id).get();
 	}
 
@@ -66,10 +60,6 @@ public class MovieServiceImpl implements MovieService{
 		}
 		return null;
 	}
-@Override
-public List<Movie> viewMovies(){
-	return movieRepo.findAll();
-}
 	
 	@Override
 	public Set<Movie> getMovieByGenre(String genre) {
@@ -95,4 +85,20 @@ public List<Movie> viewMovies(){
 	public void rateMovie(MovieRating newRating) {
 		ratingRepo.save(newRating);	
 	}
+
+	@Override
+	public ApiMovie[] getMovieByQuery(String query) {
+		ApiMovie[] movies = TMDBApi.APIQuery(query);
+		
+		return movies;
+	}
+
+	@Override
+	public ApiMovie[] getNewMovies() {
+		ApiMovie[] allMovies = TMDBApi.newMovies();
+		
+		return allMovies;
+	}
+
+	
 }

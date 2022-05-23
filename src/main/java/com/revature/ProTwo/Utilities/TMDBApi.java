@@ -20,6 +20,70 @@ public class TMDBApi {
 	private static String apiKey = "66aa79850db1fa69dcd6bf4bca65021e";
 	private static int responsecode = 0;
 
+	public static ApiMovie getById(long id) {
+		URL url = null;
+		try {
+			url = new URL(
+					"https://api.themoviedb.org/3/movie/" + id + "?api_key=" + apiKey + "&language=en-US");
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		
+		HttpURLConnection conn = null;
+		try {
+			conn = (HttpURLConnection) url.openConnection();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// Get the required object from the above created object
+		JSONObject data_obj;// = new JSONObject();
+		
+		
+		try {
+
+			conn.setRequestMethod("GET");// hard coded my api key for now
+			conn.connect();
+
+			// Getting the response code
+			responsecode = conn.getResponseCode();
+
+			if (responsecode != 200) {
+				throw new RuntimeException("HttpResponseCode: " + responsecode);
+			} else {
+
+				String inline = "";
+				String sb = "";
+
+				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
+
+				while ((inline = br.readLine()) != null) {
+					sb += (inline + "\n");
+				}
+
+				br.close();
+
+				// Using the JSON simple library parse into a json object
+				JSONParser parse = new JSONParser();
+				data_obj = (JSONObject) parse.parse(sb);
+
+			}
+			ApiMovie apiMov = new ApiMovie();
+			ObjectMapper mapper = new ObjectMapper();
+			mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+			JSONObject new_obj = (JSONObject) data_obj;
+			apiMov = mapper.convertValue(new_obj, ApiMovie.class);
+			apiMov.setKey(videoLink(id));
+
+			return apiMov;
+
+		} catch (Exception e) {
+			return null;
+
+		}
+		
+	}
+	
 	public static ApiMovie[] APIQuery(String type) {// arg = search query
 		URL queryUrl = null;
 
@@ -39,10 +103,7 @@ public class TMDBApi {
 
 		// Get the required object from the above created object
 		JSONArray obj = Connection(conn);
-		String[] ranImage = new String[obj.size()];
-
 		ApiMovie[] apiMov = new ApiMovie[obj.size()];
-
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
@@ -50,12 +111,12 @@ public class TMDBApi {
 
 			// takes the JSONArray and writes to JSONObject the to string array
 			JSONObject new_obj = (JSONObject) obj.get(i);
-			ranImage[i] = (String) new_obj.get("poster_path");
-
 			apiMov[i] = mapper.convertValue(new_obj, ApiMovie.class);
 
 		}
-
+		for (int i = 0; i < apiMov.length; i++) {
+			apiMov[i].setKey(videoLink(apiMov[i].getId()));
+		}
 		return apiMov;
 	}
 
@@ -79,9 +140,7 @@ public class TMDBApi {
 		// Get the required object from the above created object
 		JSONArray obj = Connection(conn);
 		String[] ranImage = new String[obj.size()];
-
 		ApiMovie[] apiMov = new ApiMovie[obj.size()];
-
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
@@ -90,11 +149,12 @@ public class TMDBApi {
 			// takes the JSONArray and writes to JSONObject the to string array
 			JSONObject new_obj = (JSONObject) obj.get(i);
 			ranImage[i] = (String) new_obj.get("poster_path");
-
 			apiMov[i] = mapper.convertValue(new_obj, ApiMovie.class);
 
 		}
-
+		for (int i = 0; i < apiMov.length; i++) {
+			apiMov[i].setKey(videoLink(apiMov[i].getId()));
+		}
 		return apiMov;
 	}
 
@@ -163,7 +223,7 @@ public class TMDBApi {
 				// Using the JSON simple library parse into a json object
 				JSONParser parse = new JSONParser();
 				data_obj = (JSONObject) parse.parse(sb);
- 
+
 			}
 			return (JSONArray) data_obj.get("results");
 

@@ -11,7 +11,7 @@ public class ProTwoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProTwoApplication.class, args);
 		
-		//System.out.println(TMDBApi.RandomImage("Bad"));
+		//System.out.println(TMDBApi.getById(799876));
 	}
 
 

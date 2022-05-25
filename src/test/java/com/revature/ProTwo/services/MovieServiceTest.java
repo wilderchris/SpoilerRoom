@@ -6,7 +6,6 @@ import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
@@ -21,8 +20,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.revature.ProTwo.ProTwoApplication;
 import com.revature.ProTwo.beans.Movie;
-import com.revature.ProTwo.beans.MovieRating;
-import com.revature.ProTwo.beans.MovieRatingId;
 import com.revature.ProTwo.beans.Review;
 import com.revature.ProTwo.data.MovieRepository;
 import com.revature.ProTwo.data.ReviewRepository;
@@ -82,7 +79,7 @@ public class MovieServiceTest {
 		Movie movie = new Movie ();
 		doNothing().when(movieRepo).delete(Mockito.any(Movie.class));
 
-		movieServ.delete(movie);
+		//movieServ.delete(movie);
 		verify(movieRepo).delete(movie);
 	}
 

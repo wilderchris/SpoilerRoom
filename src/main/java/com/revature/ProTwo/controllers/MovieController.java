@@ -42,16 +42,11 @@ public class MovieController {
 		MovieController.movieServ = movieServ;
 	}
 
-	@GetMapping
-	public ResponseEntity<List<Movie>> getMovies() {
-		
-		List<Movie> allMovies = movieServ.viewMovies();
-		return ResponseEntity.ok(allMovies);
-	}
+	
 //////////////////////////////
 	@GetMapping(path = "/api/{query}")
 	public ResponseEntity<ApiMovie[]> getMovieByQuery(@PathVariable String query) throws MovieNotFoundException {
-		ApiMovie[] movies = TMDBApi.APIQuery(query);
+		ApiMovie[] movies = movieServ.getMovieByQuery(query);
 		if (movies != null)
 			return ResponseEntity.ok(movies);
 		else
@@ -62,58 +57,56 @@ public class MovieController {
 	@GetMapping(path = "/api/")
 	public ResponseEntity<ApiMovie[]> getMovieByNew() throws MovieNotFoundException {
 		
-		ApiMovie[] allMovies = TMDBApi.newMovies();
-		for ( int i = 0; i < allMovies.length;i++) {
-		allMovies[i].setKey(TMDBApi.videoLink(allMovies[i].getId()));
-		}
+		ApiMovie[] allMovies = movieServ.getNewMovies();
+		
 		return ResponseEntity.ok(allMovies);
 		
 		
 	}
 	////////////////////////////////////////////////////
-	
-	@PostMapping
-	public ResponseEntity<Map<String, Integer>> create(@RequestBody Movie newMovie) {
+	/// not needed with new api???
+//	@PostMapping
+//	public ResponseEntity<Map<String, Integer>> create(@RequestBody Movie newMovie) {
+//
+//		try {
+//			newMovie = movieServ.create(newMovie);
+//			Map<String, Integer> newIdMap = new HashMap<>();
+//			newIdMap.put("generatedId", newMovie.getId());
+//			return ResponseEntity.status(HttpStatus.CREATED).body(newIdMap);
+//		} catch (MovieAlreadyExistsException e) {
+//			return ResponseEntity.status(HttpStatus.CONFLICT).build();
+//		}
+//	}
 
-		try {
-			newMovie = movieServ.create(newMovie);
-			Map<String, Integer> newIdMap = new HashMap<>();
-			newIdMap.put("generatedId", newMovie.getId());
-			return ResponseEntity.status(HttpStatus.CREATED).body(newIdMap);
-		} catch (MovieAlreadyExistsException e) {
-			return ResponseEntity.status(HttpStatus.CONFLICT).build();
-		}
-	}
+	// GET to /movie/{movieId}    not needed?
+//	@GetMapping(path = "/{movieId}")
+//	public ResponseEntity<Movie> getMovieById(@PathVariable int movieId) throws MovieNotFoundException {
+//		Movie movie = movieServ.getMovieById(movieId);
+//		if (movie != null)
+//			return ResponseEntity.ok(movie);
+//		else
+//			return ResponseEntity.notFound().build();
+//	}
 
-	// GET to /movie/{movieId}
-	@GetMapping(path = "/{movieId}")
-	public ResponseEntity<Movie> getMovieById(@PathVariable int movieId) throws MovieNotFoundException {
-		Movie movie = movieServ.getMovieById(movieId);
-		if (movie != null)
-			return ResponseEntity.ok(movie);
-		else
-			return ResponseEntity.notFound().build();
-	}
-
-	// PUT to /movie/{movieId}
+	// PUT to /movie/{movieId}   not needed with the api???
 	@PutMapping(path = "/{movieId}")
-	public ResponseEntity<Movie> updateMovie(@RequestBody Movie movieToEdit, @PathVariable int movieId) {
-		try {
-			Movie movie = movieServ.getMovieById(movieId);
-			if (movieToEdit != null) {
-				movie = movieToEdit;
-				movie.setId(movieId);
-				movie = movieServ.updateMovie(movie);
-				if (movie != null)
-					return ResponseEntity.ok(movie);
-				else
-					return ResponseEntity.notFound().build();
-			} else {
-				return ResponseEntity.status(HttpStatus.CONFLICT).build();
-			}
-		} catch (MovieNotFoundException e) {
-			return ResponseEntity.notFound().build();
-		}
+//	public ResponseEntity<Movie> updateMovie(@RequestBody Movie movieToEdit, @PathVariable int movieId) {
+//		try {
+//			Movie movie = movieServ.getMovieById(movieId);
+//			if (movieToEdit != null) {
+//				movie = movieToEdit;
+//				movie.setId(movieId);
+//				movie = movieServ.updateMovie(movie);
+//				if (movie != null)
+//					return ResponseEntity.ok(movie);
+//				else
+//					return ResponseEntity.notFound().build();
+//			} else {
+//				return ResponseEntity.status(HttpStatus.CONFLICT).build();
+//			}
+//		} catch (MovieNotFoundException e) {
+//			return ResponseEntity.notFound().build();
+//		}
 		/*
 		 * } if (movieToEdit != null && movieToEdit.getId() == movieId) { movieToEdit =
 		 * movieServ.updateMovie(movieToEdit); if (movieToEdit != null) return
@@ -121,7 +114,7 @@ public class MovieController {
 		 * ResponseEntity.notFound().build(); } else { return
 		 * ResponseEntity.status(HttpStatus.CONFLICT).build(); }
 		 */
-	}
+	//}
 
 	// GET to /movie/name_search?name=
 	@GetMapping(path = "/name_search")

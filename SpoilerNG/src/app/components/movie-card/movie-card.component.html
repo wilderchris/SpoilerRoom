@@ -1,0 +1,35 @@
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<div class="moviecard">
+  <div class="card_content">
+    <!-- front of card -->
+    <div class="card_front"><img [src]="urlString + movie2.poster_path">
+    </div>
+    <!-- back of card -->
+    <div id="card_back">
+      <!-- <img [src]="backImg"> -->
+      <div>
+        <div>
+          <u>
+            <div class="card_title">{{ movie2.title }}</div>
+          </u>
+          <div><br>
+            <label>Year: {{ movie2.release_date }}</label><br>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div> <b><u>Summary</u></b>
+          <p>
+            <textarea readonly name="fieldName" ngDefaultControl id="movieDesc"
+              [(ngModel)]='movie2.overview'></textarea>
+            <!-- <youtube-player suggestedQuality="highres" [height]="200" [width]="300" [videoId]="movie2.key">
+            </youtube-player> -->
+            <br>
+          <div>
+            <!--Button for specific movie-->
+            <!-- <button mat-button type="button"  (click)="onCreateClick(movie2.id)" [id]="movie2.id" >Review {{ movie2.title }}</button> -->
+          </div>
+        </div>
+      </div>
+    </div>

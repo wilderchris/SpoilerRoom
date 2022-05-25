@@ -1,0 +1,28 @@
+<div>
+    <div class='LoginBanner'>
+        <h1>Login to your Account</h1>
+    </div>
+</div>
+<div id="loginsplash">
+    <form id="login">
+        <hr>
+        <span>
+            <form>
+                <label for="username">Username: </label>
+                <input matInput type="text" id="username" [(ngModel)]="usernameInput" name="username">
+            </form>
+            &nbsp;
+            <form>
+                <label for="passwd">Password: </label>
+                <input matInput type="password" id="passwd" [(ngModel)]="passwordInput" name="passwd">
+            </form>
+        </span>
+        <span><button type="button" id="loginBtn" (click)="logIn()">Submit</button>
+            &nbsp;
+            <button type="button"><a routerLink="/register" routerLinkActive="active">
+                    Register
+                </a>
+            </button>
+        </span>
+    </form>
+</div>

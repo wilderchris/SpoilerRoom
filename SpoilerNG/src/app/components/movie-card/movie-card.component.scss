@@ -1,0 +1,96 @@
+img {
+  width: 200uv;//400uv
+  height: 400px;//600px
+  background-size: cover;
+}
+
+#movieDesc {
+
+  width: 100%;
+  height: 280px;//200px
+  /* */
+  padding: 1px 2px;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  // border: 2px solid #ccc;
+  word-break: keep-all;
+  //border-radius: 4px;
+  background-color: rgb(199, 212, 234);
+  // align-self:stretch;
+}
+
+/*  start of new */
+
+.card_content {
+  text-align: center;
+  position: relative;
+  padding: 3em;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+.moviecard:hover .card_content {
+  transform: rotateY(.5turn);
+}
+
+/*  start of new */
+.moviecard {
+  width: 200uv;//300uv
+  height: 400px;//600px changed from 400 tp 450 and the spacing for all the cards better.. check adjustments
+}
+
+.card_content {
+  text-align: center;
+  position: relative;
+  padding: 5em;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+.moviecard:hover .card_content {
+  transform: rotateY(.5turn);
+}
+
+.card_front,
+#card_back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2em;
+  backface-visibility: hidden;
+  width: 200uv;//400uv
+  height: fit-content;
+}
+
+.card_front::before {
+  content: '';
+  position: absolute;
+  border: 3px solid currentColor;
+}
+
+.card_title {
+  font-size: 2rem;
+}
+
+#card_back {
+  transform: rotateY(.5turn);
+  position: absolute;
+  width: 200uv;//400uv
+  height: 400px;//550px
+  background-color:rgb(37, 23, 39);
+  color:blanchedalmond;
+  // border: 2px solid currentColor;
+}
+
+button {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: rgb(245, 0, 0);
+  font-size: 2rem;
+  height: 100px;
+  width: 150px;
+  border-radius: 90%;
+  border: 4px solid #383636;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.411), 0 17px 50px 0 rgba(0, 0, 0, 0.37);
+}

@@ -1,0 +1,35 @@
+<div class="nav">
+    <div class="logo">
+        <a routerLink="home"><img src="./assets/movie board icon_4751062.png"></a>
+    </div>
+    <div class="menu">
+        <div><a *ngIf="loggedInUser" routerLink="mypage">My Home</a></div>
+        <div><a routerLink="search">Search</a></div>
+        <div><a routerLink="new">Upcoming</a></div>
+
+        &nbsp;
+        &nbsp;
+
+    </div>
+    <div class='login'>
+        <button *ngIf="!loggedInUser; else user" (click)="showLogin=!showLogin">Log In</button>
+
+        <ng-template #user>
+
+           <div class="userDisplay">Hi {{ loggedInUser.firstName }} </div>
+           &nbsp;&nbsp;
+            <button (click)="logOut()">Log Out</button>
+        </ng-template>
+
+    </div>
+
+    <ng-container *ngIf="showLogin">
+        <app-login (login)="setup()"></app-login>
+    </ng-container>
+   
+    <!-- <div class="profile">
+        <a *ngIf="loggedInUser && loggedInUser.rank.rankTitle == 'Admin' " routerLink="admin">User Admin</a>
+
+    </div> -->
+    
+</div>

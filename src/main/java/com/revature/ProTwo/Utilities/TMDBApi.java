@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.ProTwo.beans.ApiMovie;
 
 public class TMDBApi {
-	private static String apiKey = "66aa79850db1fa69dcd6bf4bca65021e";
+	private static String apiKey = API_KEY;
 	private static int responsecode = 0;
 
 	public static ApiMovie getById(long id) {

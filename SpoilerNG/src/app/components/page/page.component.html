@@ -1,0 +1,24 @@
+<div class="container">
+    <div id="rightBox" class="movieBox">
+        <img [src]="urlString + movie.poster_path">
+    </div>
+    <div id="leftBox" class="descriptionBox">
+        <div>
+            <u>
+                <h1 class="card_title">{{ movie.title }}</h1>
+            </u>
+            <div><br>
+            </div>
+        </div>
+        <div>
+            <div> <b><u>Summary</u></b> </div>
+            <textarea readonly name="fieldName" ngDefaultControl id="movieDesc" [(ngModel)]='movie.overview'></textarea>
+            <br>
+            <div class="videoBox">
+                <youtube-player [width]="640" [height]="390" [videoId]="movie.key" 
+                 allowfullscreen>
+                </youtube-player>
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,6 +14,8 @@ import { MyPageComponent } from './components/my-page/my-page.component';
 import { SearchComponent } from './components/search/search.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { LoginComponent } from './components/login/login.component';
+import { PageComponent } from './components/page/page.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { LoginComponent } from './components/login/login.component';
     MyPageComponent,
     SearchComponent,
     AdminComponent,
-    LoginComponent
+    LoginComponent,
+    PageComponent
     ],
   imports: [
     BrowserModule,

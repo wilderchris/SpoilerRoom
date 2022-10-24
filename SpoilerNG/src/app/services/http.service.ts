@@ -18,8 +18,8 @@ apiKey:string = "66aa79850db1fa69dcd6bf4bca65021e";
 apiQuery:string = "&query=";
 apiLang:string = "&language=en-US";
     public movieid!: number;
-
-
+public movie!: Movie;
+public movies!: Movie[];
 
 
   constructor(private http: HttpClient) { }
@@ -43,7 +43,13 @@ apiLang:string = "&language=en-US";
       return resp.json();
 
 }
-
+async getMovieGenre(movieGenre:string): Promise<Movie[]> {// 
+  let resp = await fetch(this.url + '/movie/genre_search?' + movieGenre );
+  if (resp.status===200) {
+    return await resp.json();
+  }
+  return resp.json();
+}
 async getMovieVideo(movieId:number): Promise<string> {// queery params may need more
     let resp = await fetch(this.url + '/movie/api/' + movieId );
 

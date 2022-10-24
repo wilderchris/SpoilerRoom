@@ -1,5 +1,7 @@
 package com.revature.ProTwo.beans;
 
+
+import java.util.List;
 import java.util.Objects;
 
 public class ApiMovie {
@@ -14,7 +16,7 @@ public class ApiMovie {
 
 	// private String movieRating;
 
-	// private String genre;
+	private List<Integer> genre;
 	private String poster_path;
 
 	private String key;
@@ -23,12 +25,14 @@ public class ApiMovie {
 		super();
 	}
 
-	public ApiMovie(long id, String title, String release_date, String overview, String poster_path) {
+	public ApiMovie(long id, String title,List<Integer> genre, String release_date, String overview, String poster_path) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.release_date = release_date;
 		this.overview = overview;
+		this.genre = genre;
+
 		this.poster_path = poster_path;
 	}
 
@@ -64,6 +68,14 @@ public class ApiMovie {
 		this.overview = overview;
 	}
 
+	public List<Integer> getGenre() {
+		return genre;
+	}
+
+	public void setGenre(List<Integer> genre) {
+		this.genre = genre;
+	}
+
 	public String getPoster_path() {
 		return poster_path;
 	}
@@ -72,9 +84,17 @@ public class ApiMovie {
 		this.poster_path = poster_path;
 	}
 
+	public String getKey() {
+		return key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, overview, poster_path, release_date, title);
+		return Objects.hash(genre, id, key, overview, poster_path, release_date, title);
 	}
 
 	@Override
@@ -86,23 +106,19 @@ public class ApiMovie {
 		if (getClass() != obj.getClass())
 			return false;
 		ApiMovie other = (ApiMovie) obj;
-		return id == other.id && Objects.equals(overview, other.overview)
-				&& Objects.equals(poster_path, other.poster_path) && release_date == other.release_date
-				&& Objects.equals(title, other.title);
+		return Objects.equals(genre, other.genre) && id == other.id && Objects.equals(key, other.key)
+				&& Objects.equals(overview, other.overview) && Objects.equals(poster_path, other.poster_path)
+				&& Objects.equals(release_date, other.release_date) && Objects.equals(title, other.title);
 	}
 
 	@Override
 	public String toString() {
 		return "ApiMovie [id=" + id + ", title=" + title + ", release_date=" + release_date + ", overview=" + overview
-				+ ", poster_path=" + poster_path + ", Videokey=" + key + "]";
+				+ ", genre=" + genre + ", poster_path=" + poster_path + ", key=" + key + "]";
 	}
 
-	public String getKey() {
-		return key;
-	}
+	
 
-	public void setKey(String key) {
-		this.key = key;
-	}
+	
 
 }

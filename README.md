@@ -182,11 +182,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## External API
 
-The Team utilized TMDB API for Movies.
-using the free service
-
+This utilized TMDB API for Movies.
+using the free service:
 https://developers.themoviedb.org/3/getting-started/introduction
 
+The Utility is located at:
+SpoilerRoom/src/main/java/com/revature/ProTwo/Utilities/TMDBApi.java
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

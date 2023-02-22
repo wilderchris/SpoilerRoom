@@ -140,7 +140,7 @@ Soon Deployed on an EC2 instance using Jenkins and s3 Buckets
 
 <!-- This is an example of how you may give instructions on setting up your project locally. -->
 To get a local copy up and running follow these simple example steps.
-
+<!--
 ### Prerequisites
 <!-- 
 This is an example of how to list things you need to use the software and how to install them.
@@ -149,7 +149,7 @@ This is an example of how to list things you need to use the software and how to
   npm install npm@latest -g
   ``` -->
 None
-### Installation
+### Installation-->
 Clone and import into your favorite IDE as Maven Project
 
 <!-- 1. Get a free API Key at [https://example.com](https://example.com)

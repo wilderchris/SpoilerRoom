@@ -35,7 +35,16 @@
 <h3 align="center">ScreenerRoom</h3>
 
   <p align="center">
-Movie review and Social Media site to enjoy movies with friends and share your love of movies <br />
+Movie review and Social Media site to enjoy movies with friends and share your love of movies
+
+Working on adding some security to the login modules and 
+second focusing on adding a functional way to track were different videos will be available to stream. 
+I am researching linking with a watch now button. 
+
+The Goal is to expand functionality and combine an all in one search and watch hub.
+may look at netflix intereaction as well.
+
+<br />
     <a href="https://github.com/wilderchris/spoilerroom"><strong>Explore the docs »</strong></a>
     <br />
     <br />

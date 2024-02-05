@@ -23,6 +23,17 @@ export class LoginComponent implements OnInit {
     });
 console.log(this.usernameInput + "  : " + this.passwordInput);
   }
+  openModal() {
+    
+      const modal = document.querySelector('.modal');
+      if (modal) {
+        modal.classList.add('show');
+      }
+    
+  }
 
+  closeModal() {
+    // Code to close the login pop up
+  }
  
 }

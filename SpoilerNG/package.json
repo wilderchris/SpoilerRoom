@@ -18,7 +18,7 @@
     "@angular/platform-browser": "^14.3.0",
     "@angular/platform-browser-dynamic": "^14.3.0",
     "@angular/router": "^14.3.0",
-    "@angular/youtube-player": "^13.3.7",
+    "@angular/youtube-player": "^14.2.7",
     "ngx-youtube-player": "^12.0.1",
     "rxjs": "~7.5.5",
     "tslib": "^2.4.0",

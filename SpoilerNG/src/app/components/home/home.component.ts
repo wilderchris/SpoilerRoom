@@ -8,12 +8,12 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  @Output() movies!: Movie[];
+  //@Output() movies!: Movie[];
 
   constructor(private httpServ: HttpService) { }
 
   async ngOnInit(): Promise<void> {
-    this.movies = await this.httpServ.getMovieAllNew();
+    this.httpServ.movies = await this.httpServ.getMovieAllNew();
 
   }
 

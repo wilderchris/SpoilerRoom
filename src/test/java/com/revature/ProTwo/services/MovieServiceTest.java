@@ -19,6 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.revature.ProTwo.ProTwoApplication;
+import com.revature.ProTwo.beans.ApiMovie;
 import com.revature.ProTwo.beans.Movie;
 import com.revature.ProTwo.beans.Review;
 import com.revature.ProTwo.data.MovieRepository;
@@ -119,7 +120,7 @@ public class MovieServiceTest {
 
 		when(movieRepo.findByGenre(genre)).thenReturn(mockMovies);
 
-		Set<Movie> actualMovie = movieServ.getMovieByGenre(genre);
+		ApiMovie[] actualMovie = movieServ.getMovieByGenre(genre);
 		
 		assertNotNull(actualMovie);
 	}

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from 'src/app/models/movie';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-my-page',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpService) { }
 
-  ngOnInit(): void {
+ async ngOnInit(): Promise<void> {
+
+   this.http.movies = await this.http.getMovieGenre('80');
+
   }
 
 }

@@ -63,6 +63,17 @@ public class MovieController {
 		
 		
 	}
+	@GetMapping(path = "/genre_search")
+	public ResponseEntity<ApiMovie[]> getMovieByGenre(@RequestParam String genre) throws MovieNotFoundException {
+		//Set<Movie> movie = movieServ.getMovieByGenre(genre);
+		ApiMovie[] genreMovie =  movieServ.getMovieByGenre(genre);
+		
+		if (genreMovie != null)
+			return ResponseEntity.ok(genreMovie);
+		else
+			return ResponseEntity.notFound().build();
+	}
+
 	////////////////////////////////////////////////////
 	/// not needed with new api???
 //	@PostMapping
@@ -89,7 +100,7 @@ public class MovieController {
 //	}
 
 	// PUT to /movie/{movieId}   not needed with the api???
-	@PutMapping(path = "/{movieId}")
+	//@PutMapping(path = "/{movieId}")
 //	public ResponseEntity<Movie> updateMovie(@RequestBody Movie movieToEdit, @PathVariable int movieId) {
 //		try {
 //			Movie movie = movieServ.getMovieById(movieId);
@@ -126,15 +137,15 @@ public class MovieController {
 			return ResponseEntity.notFound().build();
 	}
 
-	// GET to /movie/genre_search?genre=
-	@GetMapping(path = "/genre_search")
-	public ResponseEntity<Set<Movie>> getMovieByGenre(@RequestParam String genre) throws MovieNotFoundException {
-		Set<Movie> movie = movieServ.getMovieByGenre(genre);
-		if (movie != null)
-			return ResponseEntity.ok(movie);
-		else
-			return ResponseEntity.notFound().build();
-	}
+//	// GET to /movie/genre_search?genre=
+//	@GetMapping(path = "/genre_search")
+//	public ResponseEntity<Set<Movie>> getMovieByGenre(@RequestParam String genre) throws MovieNotFoundException {
+//		Set<Movie> movie = movieServ.getMovieByGenre(genre);
+//		if (movie != null)
+//			return ResponseEntity.ok(movie);
+//		else
+//			return ResponseEntity.notFound().build();
+//	}
 
 	// GET to /movie/year_search?year=
 	@GetMapping(path = "/year_search")

@@ -1,12 +1,14 @@
 <script src="https://www.youtube.com/iframe_api"></script>
 
-<div class="moviecard">
+<div class="moviecard" (click)="myClickFunction()">
   <div class="card_content">
     <!-- front of card -->
-    <div class="card_front"><img [src]="urlString + movie2.poster_path">
+    <div class="card_front" >
+      <img [src]="urlString + movie2.poster_path">
     </div>
     <!-- back of card -->
-    <div id="card_back">
+    <div id="card_back" >
+     
       <!-- <img [src]="backImg"> -->
       <div>
         <div>

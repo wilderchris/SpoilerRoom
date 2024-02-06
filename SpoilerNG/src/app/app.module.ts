@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,11 +10,13 @@ import { SliderComponent } from './components/slider/slider.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { MyPageComponent } from './components/my-page/my-page.component';
 import { SearchComponent } from './components/search/search.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { LoginComponent } from './components/login/login.component';
+import { PageComponent } from './components/page/page.component';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+// import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 
 @NgModule({
   declarations: [
@@ -25,14 +28,15 @@ import { LoginComponent } from './components/login/login.component';
     MyPageComponent,
     SearchComponent,
     AdminComponent,
-    LoginComponent
-    ],
+    LoginComponent,
+    PageComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    NgxYoutubePlayerModule.forRoot()
+    FormsModule
+    // NgxYoutubePlayerModule // Remove the 'forRoot()' method
   ],
   providers: [],
   bootstrap: [AppComponent]

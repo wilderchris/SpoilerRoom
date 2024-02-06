@@ -9,12 +9,13 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements OnInit {
- @Input() movies!: Movie[];
-
+// @Input() movies!: Movie[];
+movies!: Movie[];
   constructor(private httpServ: HttpService) { }
 
-  async ngOnInit(): Promise<void> {
-      this.movies = await this.httpServ.getMovieAllNew();
+   ngOnInit() {
+      //this.movies = await this.httpServ.getMovieAllNew();
+      this.movies = this.httpServ.movies;
 
   }
 

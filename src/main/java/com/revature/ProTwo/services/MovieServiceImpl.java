@@ -61,10 +61,7 @@ public class MovieServiceImpl implements MovieService{
 		return null;
 	}
 	
-	@Override
-	public Set<Movie> getMovieByGenre(String genre) {
-		return movieRepo.findByGenre(genre);
-	}
+	
 
 	@Override
 	public Set<Movie> getByYear(String year) {
@@ -85,7 +82,10 @@ public class MovieServiceImpl implements MovieService{
 	public void rateMovie(MovieRating newRating) {
 		ratingRepo.save(newRating);	
 	}
-
+ /*
+  * usable code below
+  */
+	
 	@Override
 	public ApiMovie[] getMovieByQuery(String query) {
 		ApiMovie[] movies = TMDBApi.APIQuery(query);
@@ -99,6 +99,11 @@ public class MovieServiceImpl implements MovieService{
 		
 		return allMovies;
 	}
-
+	@Override
+	public ApiMovie[] getMovieByGenre(String genre) {
+	ApiMovie[] movies = TMDBApi.APIGenreQuery(genre);
+		
+		return movies;
+	}	
 	
 }

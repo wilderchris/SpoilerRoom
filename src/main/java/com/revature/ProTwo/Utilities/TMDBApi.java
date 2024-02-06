@@ -15,6 +15,7 @@ import org.json.simple.parser.JSONParser;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.ProTwo.beans.ApiMovie;
+import com.revature.ProTwo.beans.Genre;
 
 public class TMDBApi {
 	private static String apiKey = API_KEY;
@@ -83,6 +84,76 @@ public class TMDBApi {
 		}
 		
 	}
+	
+	public static ApiMovie[] APIGenreQuery(String genre) {// arg = genre query // new for a myhome page algo
+		URL movieUrl = null;    //https://api.themoviedb.org/3/movie/top_rated?api_key=   &language=en-US&page=1
+		URL GListUrl = null; //"https://api.themoviedb.org/3/genre/movie/list?api_key= X  &language=en-US";
+		try {
+			movieUrl = new URL( 
+					"https://api.themoviedb.org/3/movie/top_rated?api_key=" + apiKey + "&language=en-US");
+			GListUrl = new URL( 
+					"https://api.themoviedb.org/3/genre/movie/list?api_key=" + apiKey + "&language=en-US");
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+
+		HttpURLConnection conn = null;
+		HttpURLConnection conn1 = null;
+
+		try {
+			conn1 = (HttpURLConnection) movieUrl.openConnection();
+
+			conn = (HttpURLConnection) GListUrl.openConnection();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// Get the required object from the above created object
+		JSONArray obj = Connection(conn);
+		JSONArray obj1 = Connection(conn1);
+
+		Genre[] gList = new Genre[obj.size()];
+		ApiMovie[] apiMov = new ApiMovie[obj1.size()];
+
+		//ApiMovie[] apiMov = new ApiMovie[obj.size()];
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		
+		for (int i = 0; i < obj.size(); i++) {
+			// takes the JSONArray and writes to JSONObject the to string array
+			JSONObject new_obj = (JSONObject) obj.get(i);
+			gList[i] = mapper.convertValue(new_obj, Genre.class);
+		}
+		for (int i = 0; i < obj1.size(); i++) {
+			// takes the JSONArray and writes to JSONObject the to string array
+			JSONObject new_obj1 = (JSONObject) obj1.get(i);
+			apiMov[i] = mapper.convertValue(new_obj1, ApiMovie.class);
+		}
+		ApiMovie[] aMov = new ApiMovie[obj1.size()];
+		// comparator for genre and refactor
+		for (int i = 0; i < gList.length; i++) {
+			if( gList[i].getName().toLowerCase() == genre.toLowerCase() ) {
+					if ( apiMov[i].getGenre().contains(gList[i].getId()) ) {
+						 
+					}
+				
+				////need to work out the genre algo for comparison and return
+				// refactoring needed
+			}
+		
+		}
+		
+		
+		
+		
+		for (int i = 0; i < aMov.length; i++) {
+			aMov[i].setKey(videoLink(aMov[i].getId()));
+		}
+		return aMov;
+	}
+	
+	
+	
 	
 	public static ApiMovie[] APIQuery(String type) {// arg = search query
 		URL queryUrl = null;

@@ -18,7 +18,7 @@ public interface MovieService {
 	public Movie updateMovie(Movie movie);
 	
 	public Movie getMovieById(int id) throws MovieNotFoundException;
-	public Set<Movie> getMovieByGenre(String genre);
+	public ApiMovie[] getMovieByGenre(String genre);
 	public Set<Movie> getByYear(String year);
 	public Set<Movie> getMovieByName(String name);
 	

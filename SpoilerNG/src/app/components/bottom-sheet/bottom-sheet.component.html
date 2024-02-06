@@ -1,0 +1,31 @@
+<mat-nav-list class="loginsplash">
+   
+    <div id="loginsplash">
+      <form id="login">
+          <hr>
+          <span>
+              <form>
+                  <label for="username">Username: </label>
+                <!-- <input matInput type="text" id="username" [(ngModel)]="data.login[0]" name="username"> -->
+              </form>
+              &nbsp;
+              <form>
+                  <label for="passwd">Password: </label>
+                  <!-- <input matInput type="password" id="passwd" [(ngModel)]="data.login[1]" name="passwd"> -->
+              </form>
+          </span>
+          <span><button type="button" id="loginBtn" (click)="logIn()">Submit</button>
+              &nbsp;
+              <button type="button"><a routerLink="/register" routerLinkActive="active">
+                      Register
+                  </a>
+              </button>
+          </span>
+      </form>
+    </div>
+        <a href="https://hangouts.google.com/" mat-list-item (click)="openLink($event)">
+          <span mat-line>Google Hangouts</span>
+          <span mat-line>Show to your coworkers</span>
+        </a>
+      </mat-nav-list>
+      

@@ -6,6 +6,7 @@ import { MyPageComponent } from './components/my-page/my-page.component';
 import { PageComponent } from './components/page/page.component';
 import { SearchComponent } from './components/search/search.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
 
 const routes: Routes = [
   { path: 'new', component: HomeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'mypage', component: MyPageComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'page', component: PageComponent},
-  { path: 'slider', component: SliderComponent}
+  { path: 'slider', component: SliderComponent},
+  { path: 'bottom_sheet', component: BottomSheetComponent }
 ];
 
 @NgModule({

@@ -15,6 +15,7 @@
             <textarea readonly name="fieldName" ngDefaultControl id="movieDesc" [(ngModel)]='movie.overview'></textarea>
             <br>
             <div class="videoBox">
+                <youtube-player [videoId]="movie.key"></youtube-player>
                 <!-- <youtube-player [width]="640" [height]="390" [videoId]="movie.key" 
                  allowfullscreen>
                 </youtube-player> -->

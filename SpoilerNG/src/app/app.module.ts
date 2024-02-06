@@ -16,7 +16,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageComponent } from './components/page/page.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-// import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -35,8 +35,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-    // NgxYoutubePlayerModule // Remove the 'forRoot()' method
+    FormsModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

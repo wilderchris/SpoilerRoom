@@ -18,7 +18,7 @@ import com.revature.ProTwo.beans.ApiMovie;
 import com.revature.ProTwo.beans.Genre;
 
 public class TMDBApi {
-	private static String apiKey = API_KEY;
+	private static String apiKey = "66aa79850db1fa69dcd6bf4bca65021e";
 	private static int responsecode = 0;
 
 	public static ApiMovie getById(long id) {

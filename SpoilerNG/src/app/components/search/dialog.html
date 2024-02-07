@@ -1,0 +1,7 @@
+
+<mat-dialog-content class="searchBox">
+    Search: <input matInput type="text" [(ngModel)]="value" id="value" name="value">
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close type="submit" (click)="submitSearch(value)" cdkFocusInitial>Search</button>
+  <button mat-button mat-dialog-close >Cancel</button>
+  </mat-dialog-actions>

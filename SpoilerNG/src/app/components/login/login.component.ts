@@ -17,27 +17,22 @@ export class LoginComponent implements OnInit{
 
   ngOnInit(): void {
     // console.log("login component");
-    this.openBottomSheet();
+   // this.openBottomSheet();
   }
-  openBottomSheet(): void {
-    this.bottomSheet.open(BottomSheetComponent, {
-      data: { login: [this.usernameInput, this.passwordInput] },
+  // openBottomSheet(): void {
+
+    // this.bottomSheet.open(BottomSheetComponent, {
+      // data: { login: [this.usernameInput, this.passwordInput] },
     
-    });
-
-
-    // const bottomSheetRef = bottomSheet.open(HobbitSheet, {
-    //   data: { names: ['Frodo', 'Bilbo'] },
-    // });
-
+//} );
 
   }
 
-  logIn() {
-    this.userServ.logIn(this.usernameInput, this.passwordInput).then(resp => {
-      this.login.emit();
-    });
-    console.log(this.usernameInput + "  : " + this.passwordInput);
-  }
+  // logIn() {
+  //   this.userServ.logIn(this.usernameInput, this.passwordInput).then(resp => {
+  //     this.login.emit();
+  //   });
+  //   console.log(this.usernameInput + "  : " + this.passwordInput);
+  // }
 
-}
+// }

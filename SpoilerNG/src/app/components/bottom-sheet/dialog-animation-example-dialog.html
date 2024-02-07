@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Sign In</h2>
+<mat-dialog-content>
+  Username: <input matInput type="text" [(ngModel)]="usernameInput" id="username" name="username">
+</mat-dialog-content>
+<mat-dialog-content>
+  Password: <input matInput type="password" [(ngModel)]="passwordInput" id="passwd" name="passwd">
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close >Register</button>
+<button mat-button mat-dialog-close cdkFocusInitial (click)="logIn()">Sign In</button>
+  <button mat-button mat-dialog-close >Cancel</button>
+</mat-dialog-actions>

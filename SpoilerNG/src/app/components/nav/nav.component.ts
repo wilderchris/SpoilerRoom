@@ -21,7 +21,7 @@ export class NavComponent implements OnInit {
     this.userServ.checkLogin().then(resp => {
       this.loggedInUser = this.userServ.loggedInUser;
       this.showLogin=false;
-      // console.log(this.loggedInUser);
+      console.log(this.loggedInUser);
     });
   }
 

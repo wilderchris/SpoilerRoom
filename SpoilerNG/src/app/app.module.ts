@@ -2,7 +2,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import {MatDialogModule} from '@angular/material/dialog';
 import {MAT_BOTTOM_SHEET_DEFAULT_OPTIONS, MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { MatListModule } from '@angular/material/list';
@@ -21,7 +20,6 @@ import { PageComponent } from './components/page/page.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
-
 
 @NgModule({
   declarations: [

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Movie } from 'src/app/models/movie';
 import { HttpService } from 'src/app/services/http.service';
 
@@ -9,12 +10,15 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class MyPageComponent implements OnInit {
 
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService, private router: Router) { }
 
  async ngOnInit(): Promise<void> {
 
-   this.http.movies = await this.http.getMovieGenre('80');
+   this.http.movies = await this.http.getMovieGenre('35');
+   
+   console.log(this.http.movies);
 
+   this.router.navigateByUrl('slider');
   }
 
 }

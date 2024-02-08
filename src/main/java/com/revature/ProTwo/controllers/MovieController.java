@@ -63,7 +63,7 @@ public class MovieController {
 		
 		
 	}
-	@GetMapping(path = "/genre_search")
+	@GetMapping(path = "/api/genre_search")
 	public ResponseEntity<ApiMovie[]> getMovieByGenre(@RequestParam String genre) throws MovieNotFoundException {
 		//Set<Movie> movie = movieServ.getMovieByGenre(genre);
 		ApiMovie[] genreMovie =  movieServ.getMovieByGenre(genre);

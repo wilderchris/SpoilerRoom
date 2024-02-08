@@ -88,9 +88,10 @@ public class TMDBApi {
 	public static ApiMovie[] APIGenreQuery(String genre) {// arg = genre query // new for a myhome page algo
 		URL movieUrl = null;    //https://api.themoviedb.org/3/movie/top_rated?api_key=   &language=en-US&page=1
 		URL GListUrl = null; //"https://api.themoviedb.org/3/genre/movie/list?api_key= X  &language=en-US";
-		try {
-			movieUrl = new URL( 
-					"https://api.themoviedb.org/3/movie/top_rated?api_key=" + apiKey + "&language=en-US");
+		try {//url = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc"
+
+			movieUrl = new URL(
+					"https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false?api_key=" + apiKey + "&language=en-US&page=1&sort_by=popularity.desc");
 			GListUrl = new URL( 
 					"https://api.themoviedb.org/3/genre/movie/list?api_key=" + apiKey + "&language=en-US");
 		} catch (MalformedURLException e) {
@@ -197,6 +198,46 @@ public class TMDBApi {
 
 		try {
 			newMoviesUrl = new URL("https://api.themoviedb.org/3/movie/upcoming?api_key=" + apiKey + "&language=en-US");
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+
+		HttpURLConnection conn = null;
+		try {
+			conn = (HttpURLConnection) newMoviesUrl.openConnection();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// Get the required object from the above created object
+		JSONArray obj = Connection(conn);
+		String[] ranImage = new String[obj.size()];
+		ApiMovie[] apiMov = new ApiMovie[obj.size()];
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
+		for (int i = 0; i < obj.size(); i++) {
+
+			// takes the JSONArray and writes to JSONObject the to string array
+			JSONObject new_obj = (JSONObject) obj.get(i);
+			ranImage[i] = (String) new_obj.get("poster_path");
+			apiMov[i] = mapper.convertValue(new_obj, ApiMovie.class);
+
+		}
+		for (int i = 0; i < apiMov.length; i++) {
+			apiMov[i].setKey(videoLink(apiMov[i].getId()));
+		}
+		return apiMov;
+	}
+	public static ApiMovie[] myHomeMovies() {
+
+		URL newMoviesUrl = null;
+
+		try {
+			newMoviesUrl = new URL(
+					"https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false?api_key=" +
+							apiKey + "&language=en-US&page=1&sort_by=popularity.desc");
+
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}

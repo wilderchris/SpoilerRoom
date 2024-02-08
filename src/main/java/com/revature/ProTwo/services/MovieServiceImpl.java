@@ -101,8 +101,9 @@ public class MovieServiceImpl implements MovieService{
 	}
 	@Override
 	public ApiMovie[] getMovieByGenre(String genre) {
-	ApiMovie[] movies = TMDBApi.APIGenreQuery(genre);
-		
+//	ApiMovie[] movies = TMDBApi.APIGenreQuery(genre);
+		System.out.println("genre: " + genre);
+	ApiMovie[] movies = TMDBApi.myHomeMovies();
 		return movies;
 	}	
 	

@@ -2,16 +2,19 @@
     <div class="logo">
         <a routerLink="home"><img src="./assets/movie board icon_4751062.png"></a>
     </div>
-    <div class="menu">
-        <div><a *ngIf="loggedInUser" routerLink="mypage">Home</a></div>
-        <div><a routerLink="search">Search</a></div>
-        <div><a routerLink="new">Upcoming</a></div>
-        <div><a routerLink="bottom_sheet">Log-In</a></div>
-        &nbsp;
-        &nbsp;
-
+    
+    <div class="title">
+        The Movie Database Interface: Spoiler Room
     </div>
-    <div class='login'>
+    <div class="menu">
+        <!-- <div><a *ngIf="loggedInUser" routerLink="mypage">Home</a></div> -->
+        <!-- <div><a routerLink="search">Search</a></div> -->
+        <!-- <div><a routerLink="new">Upcoming</a></div> -->
+        <!-- <div><a routerLink="bottom_sheet">Log-In</a></div> -->
+        <!-- &nbsp;
+        &nbsp; -->
+
+    <!-- <div class='login'>
         <button *ngIf="!loggedInUser; else user" (click)="showLogin=!showLogin">Log In</button>
 
         <ng-template #user>
@@ -25,11 +28,31 @@
 
     <ng-container *ngIf="showLogin">
         <app-login (login)="setup()"></app-login>
-    </ng-container>
+    </ng-container> -->
    
-    <!-- <div class="profile">
-        <a *ngIf="loggedInUser && loggedInUser.rank.rankTitle == 'Admin' " routerLink="admin">User Admin</a>
+<div class="menuOpen">
+    <button mat-button [matMenuTriggerFor]="beforeMenu">Menu</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item *ngIf="loggedInUser; else newUser" >Account</button>
+  <ng-template #newUser>
+    <button mat-menu-item routerLink="admin" >Register</button>
+    </ng-template>
 
-    </div> -->
+
+  <button mat-menu-item *ngIf="loggedInUser" routerLink="mypage">Home</button>
+
+  <button mat-menu-item routerLink="search">Search</button>
+  <button mat-menu-item routerLink="new">Upcoming</button>
+<div class='login'>
     
+    <button mat-menu-item *ngIf="!loggedInUser; else user" (click)="showLogin=!showLogin" routerLink="bottom_sheet">
+        Log In</button>
+    <ng-template #user>
+    <button mat-menu-item (click)="logOut()">Log Out</button>
+    </ng-template>
+</div>
+</mat-menu>
+</div>        
+<!-- <div class="userDisplay">Hi {{ loggedInUser.firstName }} </div> -->
+</div>
 </div>

@@ -44,7 +44,7 @@ public movies!: Movie[];
 
 }
 async getMovieGenre(movieGenre:string): Promise<Movie[]> {// 
-  let resp = await fetch(this.url + '/movie/api/genre_search?' + movieGenre );
+  let resp = await fetch(this.url + '/movie/api/genre_search/' + movieGenre );
   if (resp.status===200) {
     return await resp.json();
   }else{

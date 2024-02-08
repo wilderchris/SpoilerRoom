@@ -13,12 +13,10 @@ export class MyPageComponent implements OnInit {
   constructor(private http: HttpService, private router: Router) { }
 
  async ngOnInit(): Promise<void> {
+  // this.http.movies = await this.http.getMovieAllNew();
 
    this.http.movies = await this.http.getMovieGenre('35');
-   
-   console.log(this.http.movies);
-
-   this.router.navigateByUrl('slider');
+      this.router.navigateByUrl('slider');
   }
 
 }

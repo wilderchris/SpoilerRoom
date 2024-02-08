@@ -20,6 +20,7 @@ import { PageComponent } from './components/page/page.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.com
     MatDialogModule,
     MatBottomSheetModule,
     MatListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMenuModule
   ],
   providers: [  provideAnimations() ,
     {provide: MAT_BOTTOM_SHEET_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}} ],

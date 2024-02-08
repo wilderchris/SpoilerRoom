@@ -152,10 +152,7 @@ public class TMDBApi {
 		}
 		return aMov;
 	}
-	
-	
-	
-	
+
 	public static ApiMovie[] APIQuery(String type) {// arg = search query
 		URL queryUrl = null;
 
@@ -233,10 +230,10 @@ public class TMDBApi {
 
 		URL newMoviesUrl = null;
 
-		try {
+		try {//https://api.themoviedb.org/3/discover/movie?api_key=66aa79850db1fa69dcd6bf4bca65021e&language=en-US&sort_by=popularity.desc
 			newMoviesUrl = new URL(
-					"https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false?api_key=" +
-							apiKey + "&language=en-US&page=1&sort_by=popularity.desc");
+					"https://api.themoviedb.org/3/discover/movie?api_key=" +
+							apiKey + "&language=en-US&sort_by=popularity.desc");
 
 		} catch (MalformedURLException e) {
 			e.printStackTrace();

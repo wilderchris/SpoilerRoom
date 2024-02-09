@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { MatListModule } from '@angular/material/list';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 // import { BrowserModule } from '@angular/platform-browser';
 import {
@@ -12,7 +12,8 @@ import {
   MatDialogTitle,
   MatDialogContent,
 } from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bottom-sheet',
@@ -22,16 +23,16 @@ import {MatButtonModule} from '@angular/material/button';
   templateUrl: './bottom-sheet.component.html',
   styleUrl: './bottom-sheet.component.scss'
 })
-export class BottomSheetComponent implements OnInit{
+export class BottomSheetComponent implements OnInit {
 
-  
 
-  constructor(private userServ:UserService, 
-              public dialog: MatDialog ) {}
+
+  constructor(private userServ: UserService,
+    public dialog: MatDialog) { }
   ngOnInit(): void {
     this.openDialog('1000ms', '1000ms');
-    }
-  
+  }
+
   // logIn() {
   //   this.userServ.logIn(this.usernameInput,this.passwordInput).then(resp => {
   //     this.login.emit();
@@ -44,17 +45,17 @@ export class BottomSheetComponent implements OnInit{
     });
   }
 }
-  // }
-  // openLink(event: MouseEvent): void {
-  //   this._bottomSheetRef.dismiss();
-  //   event.preventDefault();
-  // }
+// }
+// openLink(event: MouseEvent): void {
+//   this._bottomSheetRef.dismiss();
+//   event.preventDefault();
+// }
 // }
 @Component({
   selector: 'dialog-animations-example-dialog',
   templateUrl: './dialog-animation-example-dialog.html',
   standalone: true,
-  imports: [MatButtonModule, MatDialogActions, MatDialogClose, 
+  imports: [MatButtonModule, MatDialogActions, MatDialogClose,
     MatDialogTitle, MatDialogContent, FormsModule, ReactiveFormsModule],
 })
 export class DialogAnimationsExampleDialog {
@@ -62,14 +63,16 @@ export class DialogAnimationsExampleDialog {
   passwordInput!: string;
   login: any;
   constructor(public dialogRef: MatDialogRef<DialogAnimationsExampleDialog>,
-    public userServ: UserService) {}
+              public userServ: UserService,
+              private router: Router) { }
 
   logIn() {
-      this.userServ.logIn(this.usernameInput, this.passwordInput).then(resp => {
-        this.login.emit();
-      });
-      console.log(this.usernameInput + "  : " + this.passwordInput);
-    }
-  
-  
+    this.userServ.logIn(this.usernameInput, this.passwordInput).then(resp => {
+      this.login.emit();
+    });
+    this.router.navigate(['/mypage']);
+    console.log(this.usernameInput + "  : " + this.passwordInput);
+  }
+
+
 }

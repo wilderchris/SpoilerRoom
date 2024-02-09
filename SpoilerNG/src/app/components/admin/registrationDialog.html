@@ -1,0 +1,45 @@
+
+<h1>{{title}}</h1>
+
+<div class="registration">
+<form *ngIf="!loading" [formGroup]="form" (ngSubmit)="register()">
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label">First Name</label>
+            <input matInput type="text" [(ngModel)]="user.firstName" id="firstname" name="firstname">
+           
+        </div>
+        <div class="mb-3 col">
+            <label class="form-label">Last Name</label>
+            <input matInput type="text" [(ngModel)]="user.lastName" id="lastname" name="lastname">
+           
+        </div>
+    </div>
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label">Username</label>
+            <input matInput type="text" [(ngModel)]="user.username" id="username" name="username">
+          
+        </div>
+        <div class="mb-3 col">
+            <label class="form-label">
+                Password
+                <em *ngIf="id">(Leave blank to keep the same password)</em>
+            </label>
+            <input matInput type="password" [(ngModel)]="user.passwd" id="passwd" name="passwd">
+        
+        </div>
+    </div>
+    <div class="mb-3">
+        <button [disabled]="submitting" (click)="register()" class="btn btn-primary">
+            <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
+            Save
+        </button>
+        <a routerLink="home" class="btn btn-link">Cancel</a>
+    </div>
+</form>
+<div *ngIf="loading" class="text-center m-5">
+    <span class="spinner-border spinner-border-lg align-center"></span>
+</div>
+
+</div>

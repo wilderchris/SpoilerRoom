@@ -114,7 +114,7 @@ export class AdminComponent implements OnInit {
   selector: 'dialog-animations-example-dialog',
   templateUrl: './registrationDialog.html',
   styleUrls: ['./admin.component.scss'],
-  standalone: true,
+   standalone: true,
   imports: [MatButtonModule, MatDialogActions, MatDialogClose,
     MatDialogTitle, MatDialogContent, FormsModule, ReactiveFormsModule, CommonModule],
 })

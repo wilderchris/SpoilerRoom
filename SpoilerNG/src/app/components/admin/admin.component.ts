@@ -60,7 +60,7 @@ export class AdminComponent implements OnInit {
   }
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(regDialog, {
-      width: '250px',
+    //  width: '2500px',
       enterAnimationDuration,
       exitAnimationDuration,
     });
@@ -75,39 +75,6 @@ export class AdminComponent implements OnInit {
   }
 
 
-  //   onSubmit() {
-  //       this.submitted = true;
-
-  //       // reset alerts on submit
-  //       // this.alertService.clear();
-
-  //       // stop here if form is invalid
-  //       if (this.form.invalid) {
-  //           return;
-  //       }
-
-  //       this.submitting = true;
-  //       // this.saveUser()
-  //       //     .pipe(first())
-  //       //     .subscribe({
-  //       //         next: () => {
-  //                   // this.alertService.success('User saved', { keepAfterRouteChange: true });
-  //               //     this.router.navigateByUrl('/users');
-  //               // },
-  //               // error: error => {
-  //               //     this.alertService.error(error);
-  //               //     this.submitting = false;
-  //               // }
-  //   //         })
-  //   // }
-
-  //   // private saveUser() {
-  //       // create or update user based on id param
-  //       // return this.id
-  //           // ? this.accountService.update(this.id!, this.form.value)
-  //           // : this.accountService.register(this.form.value);
-  //   // }
-  // }
 }
 
 @Component({
@@ -137,6 +104,7 @@ export class regDialog {
 
   register() {
     this.user.rank = { id: 1, rankTitle: "admin" };
+    console.table(this.user);
     this.userServ.register(this.user).then(resp => {
       this.login.emit();
 

@@ -7,6 +7,9 @@ import { first } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 import { CommonModule } from '@angular/common';
+import {  MatFormFieldModule } from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+
 
 @Component({
   selector: 'app-admin',
@@ -16,7 +19,6 @@ import { CommonModule } from '@angular/common';
 export class AdminComponent implements OnInit {
   form!: FormGroup;
   id?: string;
-  title!: string;
   loading = false;
   submitting = false;
   submitted = false;
@@ -45,19 +47,7 @@ export class AdminComponent implements OnInit {
       password: ['', [Validators.minLength(6), ...(!this.id ? [Validators.required] : [])]]
     });
 
-    this.title = 'Register';
-    if (this.id) {
-      // edit mode
-      this.title = 'Edit Account';
-      this.loading = true;
-      // this.accountService.getById(this.id)
-      // .pipe(first())
-      // .subscribe(x => {
-      //     this.form.patchValue(x);
-      //     this.loading = false;
-      // });
-    }
-  }
+     }
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(regDialog, {
     //  width: '2500px',
@@ -83,7 +73,8 @@ export class AdminComponent implements OnInit {
   styleUrls: ['./admin.component.scss'],
    standalone: true,
   imports: [MatButtonModule, MatDialogActions, MatDialogClose,
-    MatDialogTitle, MatDialogContent, FormsModule, ReactiveFormsModule, CommonModule],
+    MatDialogTitle, MatDialogContent, FormsModule, MatCardModule,
+    ReactiveFormsModule, CommonModule, MatFormFieldModule],
 })
 export class regDialog {
   usernameInput!: string;
@@ -91,11 +82,17 @@ export class regDialog {
   login: any;
   form!: FormGroup;
   id?: string;
-  title!: string;
   loading = false;
   submitting = false;
   submitted = false;
-  user!: User;
+  user: User = {
+    id: 0,
+    username: '',
+    passwd: '',
+    firstName: '',
+    lastName: '',
+    rank: { id: 0, rankTitle: '' }
+  };
   // @Output() login: EventEmitter<any> = new EventEmitter();
 
   constructor(public dialogRef: MatDialogRef<regDialog>,
@@ -103,8 +100,10 @@ export class regDialog {
     private router: Router) { }
 
   register() {
-    this.user.rank = { id: 1, rankTitle: "admin" };
-    console.table(this.user);
+    // console.table(this.user);
+
+    // this.user.rank = { id: 1, rankTitle: "admin" };
+    // console.table(this.user);
     this.userServ.register(this.user).then(resp => {
       this.login.emit();
 

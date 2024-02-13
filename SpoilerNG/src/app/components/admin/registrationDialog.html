@@ -1,46 +1,60 @@
-
-
-<div class="registration">
-    <h1>{{title}}</h1>
-
-<form *ngIf="!loading" [formGroup]="form" (ngSubmit)="register()">
-    <div class="row">
-        <div class="mb-3 col">
-            <label class="form-label">First Name</label>
-            <input matInput type="text" [(ngModel)]="user.firstName" id="firstname" name="firstname">
-           
+<div mat-dialog-title class="registration">
+    <!-- Register -->
+<mat-card>
+    <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="register()">
+        <div mat-dialog-content>
+            <div class="row">
+            <div class="mb-3 col">
+                <mat-label>FIrst Name: </mat-label> 
+                <mat-form-field appearance="outline"> 
+                    <input matInput type="text"
+                        [(ngModel)]="user.firstName" id="firstname" name="firstname" placeholder="Enter Your First Name">
+                        <mat-hint>Enter your first name</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="mb-3 col">
+                <mat-label>Last Name: </mat-label> 
+                <!-- <label class="form-label">Last Name</label> -->
+                <!-- <mat-form-field appearance="outline"> -->
+                     <input matInput type="text" [(ngModel)]="user.lastName"
+                        id="lastname" name="lastname" placeholder="Enter Your Last Name">
+                        <mat-hint>Enter your last name</mat-hint>
+                <!-- </mat-form-field> -->
+            </div>
         </div>
-        <div class="mb-3 col">
-            <label class="form-label">Last Name</label>
-            <input matInput type="text" [(ngModel)]="user.lastName" id="lastname" name="lastname">
-           
+            <div class="mb-3 col">
+                <mat-label>Username:</mat-label> 
+                <!-- <label class="form-label">Username</label> -->
+                <!-- <mat-form-field appearance="outline">  -->
+                    <input matInput type="text" [(ngModel)]="user.username"
+                        id="username" name="username" placeholder="Enter your username">
+                        <mat-hint>Enter your username</mat-hint>
+                <!-- </mat-form-field> -->
+            </div>
+            <div class="mb-3 col">
+                <mat-label>Password:</mat-label> 
+                <!-- <mat-form-field appearance="outline">  -->
+                    <input matInput type="password" [(ngModel)]="user.passwd"
+                        id="passwd" name="passwd" placeholder="*******">
+                        <mat-hint>Enter your password</mat-hint>
+                <!-- </mat-form-field> -->
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="mb-3 col">
-            <label class="form-label">Username</label>
-            <input matInput type="text" [(ngModel)]="user.username" id="username" name="username">
-          
+        <div class="mb-3">
+            <button mat-raised-button [disabled]="submitting" (click)="register()" >
+                <span *ngIf="submitting" ></span>
+                Save
+            </button>
+            <button mat-raised-button><a routerLink="home" >Cancel</a></button>
         </div>
-        <div class="mb-3 col">
-            <label class="form-label">
-                Password
-                <em *ngIf="id">(Leave blank to keep the same password)</em>
-            </label>
-            <input matInput type="password" [(ngModel)]="user.passwd" id="passwd" name="passwd">
-        
-        </div>
-    </div>
-    <div class="mb-3">
-        <button [disabled]="submitting" (click)="register()" class="btn btn-primary">
-            <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
-            Save
-        </button>
-        <a routerLink="home" class="btn btn-link">Cancel</a>
-    </div>
-</form>
-<div *ngIf="loading" class="text-center m-5">
-    <span class="spinner-border spinner-border-lg align-center"></span>
-</div>
 
-</div>
+        </form>
+        </mat-card>
+        </div>
+    <!-- </form>
+    <div *ngIf="loading" class="text-center m-5">
+        <span class="spinner-border spinner-border-lg align-center"></span> -->
+    <!-- </div> -->
+
+<!-- </div> -->
+

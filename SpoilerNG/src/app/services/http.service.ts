@@ -11,7 +11,8 @@ import { map } from 'rxjs';
 })
 export class HttpService {
   [x: string]: any;
-url:string="http://localhost:8080";
+  url:string="http://192.168.0.177:8080";
+// url:string="http://localhost:8080";
 newMovieApiUrl:string = "https://api.themoviedb.org/3/movie/upcoming?api_key=";
 searchApiUrl:string = "https://api.themoviedb.org/3/search/movie?api_key=";
 apiKey:string = "66aa79850db1fa69dcd6bf4bca65021e";

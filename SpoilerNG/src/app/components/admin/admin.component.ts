@@ -7,9 +7,9 @@ import { first } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 import { CommonModule } from '@angular/common';
-import {  MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
-
+import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'app-admin',
@@ -74,7 +74,7 @@ export class AdminComponent implements OnInit {
    standalone: true,
   imports: [MatButtonModule, MatDialogActions, MatDialogClose,
     MatDialogTitle, MatDialogContent, FormsModule, MatCardModule,
-    ReactiveFormsModule, CommonModule, MatFormFieldModule],
+    ReactiveFormsModule, CommonModule, MatFormFieldModule, MatInput],
 })
 export class regDialog {
   usernameInput!: string;

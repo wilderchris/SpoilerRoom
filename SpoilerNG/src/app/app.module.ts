@@ -21,9 +21,9 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
 import {MatMenuModule} from '@angular/material/menu';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,8 @@ import {MatCardModule} from '@angular/material/card';
     ReactiveFormsModule,
     MatMenuModule,
     MatFormFieldModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule
   ],
   providers: [  provideAnimations() ,
     {provide: MAT_BOTTOM_SHEET_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}} ],

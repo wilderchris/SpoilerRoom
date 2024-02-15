@@ -1,22 +1,20 @@
 
-.registration{
-    background: transparent;
-    // background-color: rgb(176, 198, 243);
-    display: flex;
-    justify-content: left;
-    color: black;
-}
-.mb-3 col-md-6{
-    margin-bottom: 15px;
-    color: black;
-}
+// .registration{
+//     background: transparent;
+//     // background-color: rgb(176, 198, 243);
+//     display: flex;
+//     justify-content: left;
+//     // color: black;
+// }
+// .mb-3 col-md-6{
+//     margin-bottom: 15px;
+//     // color: black;
+// }
 .row{
     display: flex;
     gap: 10px;
 }
-mat-card{
-justify-self: auto;
-}
-mat-hint{
-    color: black;
+
+mat-form-field{
+    width: 100%;
 }

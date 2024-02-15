@@ -25,10 +25,10 @@ export class UserService {
     }
   }
 
-  async logIn(username:string,password:string): Promise<void> {
+  async logIn(username:string,passwrd:string): Promise<void> {
     let credentials = {
       'username':username,
-      'passwd':password
+      'passwd':passwrd
     };
 
     let resp = await fetch(this.http.url + '/user/auth', {method:'POST',body:JSON.stringify(credentials),
@@ -47,7 +47,8 @@ export class UserService {
   }
 
   async register(person:User): Promise<void> {
-    let resp = await fetch(this.http.url + '/user', {method:'POST',body:JSON.stringify(person)});
+    let resp = await fetch(this.http.url + '/user', 
+    {method:'POST',body:JSON.stringify(person),headers:this.regHeaders});
     if (resp.status===200 || resp.status===201) {
       // TODO
     }

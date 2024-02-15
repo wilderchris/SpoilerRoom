@@ -9,7 +9,8 @@ import { UserService } from 'src/app/services/user.service';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
-import { MatInput } from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-admin',
@@ -74,7 +75,8 @@ export class AdminComponent implements OnInit {
    standalone: true,
   imports: [MatButtonModule, MatDialogActions, MatDialogClose,
     MatDialogTitle, MatDialogContent, FormsModule, MatCardModule,
-    ReactiveFormsModule, CommonModule, MatFormFieldModule, MatInput],
+    ReactiveFormsModule, CommonModule, MatFormFieldModule, MatIconModule,
+    MatInputModule],
 })
 export class regDialog {
   usernameInput!: string;
@@ -82,6 +84,7 @@ export class regDialog {
   login: any;
   form!: FormGroup;
   id?: string;
+  hide = true;
   loading = false;
   submitting = false;
   submitted = false;
@@ -89,7 +92,7 @@ export class regDialog {
     id: 0,
     username: '',
     passwd: '',
-    firstName: '',
+    firstName: 'ccc',
     lastName: '',
     rank: { id: 0, rankTitle: '' }
   };
@@ -100,10 +103,10 @@ export class regDialog {
     private router: Router) { }
 
   register() {
-    // console.table(this.user);
+    console.table(this.user);
 
-    // this.user.rank = { id: 1, rankTitle: "admin" };
-    // console.table(this.user);
+    this.user.rank.id = 1;
+    console.table(this.user);
     this.userServ.register(this.user).then(resp => {
       this.login.emit();
 

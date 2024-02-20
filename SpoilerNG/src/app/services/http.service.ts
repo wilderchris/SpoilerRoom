@@ -11,6 +11,7 @@ import { map } from 'rxjs';
 })
 export class HttpService {
   [x: string]: any;
+  plantURL:string = "https://perenual.com/api/species-list?key=sk-tSoP65cc11f09ba614149"
   url:string="http://192.168.0.177:8080";
 // url:string="http://localhost:8080";
 newMovieApiUrl:string = "https://api.themoviedb.org/3/movie/upcoming?api_key=";
@@ -80,6 +81,16 @@ async getMovieVideo(movieId:number): Promise<string> {// queery params may need 
   //********* Movie Controller    the query params may be an issue still looking at them */
   sendMovie(movie:Movie):Observable<Movie> {
     return this.http.post<Movie>(this.url, movie);
+    }
+    // plantURL
+    async getAllPlants(): Promise<string[]>{
+      let resp = await fetch(this.plantURL );//+ '/movie/' );
+
+    if (resp.status===200) {
+      //console.log(resp.json());
+      return await resp.json();
+    }
+return resp.json();
     }
 
     async getAllMovies(): Promise<Movie[]>{

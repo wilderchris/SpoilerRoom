@@ -30,7 +30,7 @@ import com.revature.ProTwo.exceptions.MovieNotFoundException;
 @SpringBootTest(classes=ProTwoApplication.class)
 public class MovieServiceTest {
 
-	@MockBean
+@MockBean
 	private MovieRepository movieRepo;
 
 	@Autowired
@@ -75,7 +75,7 @@ public class MovieServiceTest {
 
 	//Delete
 	@Test
-	public void delete() throws MovieNotFoundException{
+	public void delete() throws MovieNotFoundException{// failed
 		
 		Movie movie = new Movie ();
 		doNothing().when(movieRepo).delete(Mockito.any(Movie.class));
@@ -197,7 +197,7 @@ public class MovieServiceTest {
 	}
 	
 	@Test //???
-	public void getAllReviewsForMovie() {
+	public void getAllReviewsForMovie() {// failed
 
 		when(movieServ.getAllReviewsForMovie(1)).thenReturn(mockReviews);//mockReviews, inside
 		Set<Review> actualReviews = movieServ.getAllReviewsForMovie(1);

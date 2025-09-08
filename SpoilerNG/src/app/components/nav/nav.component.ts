@@ -35,8 +35,8 @@ export class NavComponent implements OnInit {
     this.router.navigateByUrl('/');
   }
 
-  getPlants() {
-  console.log(  this.http.getAllPlants() );
-  }
+  // getPlants() {
+  // console.log(  this.http.getAllPlants() );
+  // }
 
 }

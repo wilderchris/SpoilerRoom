@@ -47,7 +47,7 @@ public class UserServiceTest {
 		for (int i=1; i<=5; i++) {
 			User user = new User();
 			user.setId(i);
-			name = String.valueOf(i);
+			name = String.valueOf(i);//city
 			if (i<3)
 				user.setFirstName("alchemy" + name);
 			mockUsers.add(user);

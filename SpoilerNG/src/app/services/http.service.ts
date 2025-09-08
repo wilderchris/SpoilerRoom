@@ -11,9 +11,9 @@ import { map } from 'rxjs';
 })
 export class HttpService {
   [x: string]: any;
-  plantURL:string = "https://perenual.com/api/species-list?key=sk-tSoP65cc11f09ba614149"
-  url:string="http://192.168.0.177:8080";
-// url:string="http://localhost:8080";
+ // plantURL:string = "https://perenual.com/api/species-list?key=sk-tSoP65cc11f09ba614149"
+ // url:string="http://192.168.0.177:8080";
+url:string="http://localhost:8080";
 newMovieApiUrl:string = "https://api.themoviedb.org/3/movie/upcoming?api_key=";
 searchApiUrl:string = "https://api.themoviedb.org/3/search/movie?api_key=";
 apiKey:string = "66aa79850db1fa69dcd6bf4bca65021e";
@@ -83,15 +83,15 @@ async getMovieVideo(movieId:number): Promise<string> {// queery params may need 
     return this.http.post<Movie>(this.url, movie);
     }
     // plantURL
-    async getAllPlants(): Promise<string[]>{
-      let resp = await fetch(this.plantURL );//+ '/movie/' );
+//     async getAllPlants(): Promise<string[]>{
+//       let resp = await fetch(this.plantURL );//+ '/movie/' );
 
-    if (resp.status===200) {
-      //console.log(resp.json());
-      return await resp.json();
-    }
-return resp.json();
-    }
+//     if (resp.status===200) {
+//       //console.log(resp.json());
+//       return await resp.json();
+//     }
+// return resp.json();
+//     }
 
     async getAllMovies(): Promise<Movie[]>{
       let resp = await fetch(this.url + '/movie/' );

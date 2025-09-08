@@ -190,7 +190,7 @@ public class TMDBApi {
 	}
 
 	public static ApiMovie[] newMovies() {
-
+	System.out.println("upcoming call");
 		URL newMoviesUrl = null;
 
 		try {
